@@ -1,6 +1,6 @@
 import { SearchIcon } from "@heroicons/react/solid";
 
-export default function Example() {
+export default function Search() {
   return (
     <div className='flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end'>
       <div className='w-full max-w-lg lg:max-w-xs'>
