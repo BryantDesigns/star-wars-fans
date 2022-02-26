@@ -1,11 +1,9 @@
-
+import AppShell from './components/layout/AppShell'
 
 function App() {
   return (
     <>
-      <h1 className='text-3xl font-bold underline'>
-        May the force 💪 be with you
-      </h1>
+      <AppShell />
     </>
   );
 }
