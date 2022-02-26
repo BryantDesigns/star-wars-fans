@@ -72,7 +72,7 @@ const people = [
   },
 ];
 
-export default function Example() {
+export default function Card() {
   return (
     <ul className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
       {people.map((person) => (
