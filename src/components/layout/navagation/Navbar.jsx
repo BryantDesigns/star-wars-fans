@@ -25,11 +25,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar() {
+export default function Navbar({ setSearchURL }) {
   return (
     <Disclosure
       as='nav'
-      className='border-b border-stardata border-opacity-50 bg-black lg:border-none lg:bg-black-50'
+      className='lg:bg-black-50 border-b border-stardata border-opacity-50 bg-black lg:border-none'
     >
       {({ open }) => (
         <>
@@ -68,7 +68,7 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
-              <Search />
+              <Search setSearchURL={setSearchURL} />
               <div className='flex lg:hidden'>
                 {/* Mobile menu button */}
                 <Disclosure.Button className='inline-flex items-center justify-center rounded-md bg-stardata-600 p-2 text-stardata-200 hover:bg-stardata-500 hover:bg-opacity-75 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-stardata-600'>

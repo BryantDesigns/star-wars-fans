@@ -10,9 +10,13 @@ export default function CharacterCard({
   starships = [],
   mass = "",
   url = "",
+  setSearchURL = () => {},
 }) {
   return (
-    <div className='overflow-hidden bg-white shadow sm:rounded-lg'>
+    <div
+      onClick={() => setSearchURL(url)}
+      className='overflow-hidden bg-white shadow sm:rounded-lg'
+    >
       <div className='min-h-80 lg:aspect-square aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-t-md bg-gray-200 group-hover:opacity-75 lg:h-80'>
         <img
           src={`https://res.cloudinary.com/bryant-designs/image/upload/v1645922844/characters/${name}.jpg`}
