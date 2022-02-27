@@ -3,9 +3,10 @@ import CharacterCard from "./card/CharacterCard";
 import Footer from "./footer/Footer";
 import useFetch from "../../hooks/useFetch";
 import FilmChart from "./chart/FilmChart";
+import Pagination from "./navagation/Pagination";
 
 export default function AppShell() {
-  const { data, setSearchURL } = useFetch("https://swapi.dev/api/people/");
+  const { data, setSearchURL, getPage } = useFetch("https://swapi.dev/api/people/");
 
   return (
     <>
@@ -22,10 +23,10 @@ export default function AppShell() {
         </div>
 
         <main className='-mt-32'>
-          <div className='mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8'>
-            <div className='rounded-lg bg-gray-100 px-5 py-6 shadow sm:px-6'>
-              <FilmChart />
-              <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
+          <div className='mx-auto px-4 pb-12 sm:px-6 lg:px-8'>
+            <div className='rounded-lg bg-gray-100 px-5 py-6 shadow sm:px-6'> 
+            <Pagination data={data} getPage={getPage} />
+              <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
                 {data?.results?.map(
                   ({
                     birth_year = "",
@@ -66,6 +67,7 @@ export default function AppShell() {
                   />
                 )}
               </div>
+              <FilmChart />
             </div>
           </div>
         </main>
