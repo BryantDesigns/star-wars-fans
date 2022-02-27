@@ -4,7 +4,7 @@ import Footer from "./footer/Footer";
 import useFetch from "../../hooks/useFetch";
 
 export default function AppShell() {
-  const { response, error, loading } = useFetch(
+  const { response } = useFetch(
     "https://swapi.dev/api/people/"
   );
 
