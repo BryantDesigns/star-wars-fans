@@ -9,10 +9,10 @@ const useFetch = (initialURL, options) => {
   useEffect(() => {
     const fetchData = async (url) => {
       try {
-        const res = await fetch(url, options);
-        const json = await res.json();
+        const response = await fetch(url, options);
+        const json = await response.json();
         setData(json);
-         console.log(url);
+        console.log(url);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -20,8 +20,13 @@ const useFetch = (initialURL, options) => {
     };
     fetchData(searchURL);
   }, [searchURL, options]);
-
-  return { data, error, loading, setSearchURL };
+  // Function to get new characters page
+  const getPage = async (url) => {
+    const response = await fetch(url);
+    const data = await response.json();
+    setData(data);
+  };
+  return { data, error, loading, setSearchURL, getPage };
 };
 
 export default useFetch;
