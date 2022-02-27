@@ -1,8 +1,13 @@
 import Navbar from "./navagation/Navbar";
-import Card from "./card/Card";
+import CharacterCard from "./card/Card";
 import Footer from "./footer/Footer";
+import useFetch from "../../hooks/useFetch";
 
 export default function AppShell() {
+  const { response } = useFetch(
+    "https://swapi.dev/api/people/"
+  );
+
   return (
     <>
       <div className='min-h-full bg-gradient-to-t from-black via-gray-900 to-gray-700'>
@@ -20,7 +25,34 @@ export default function AppShell() {
         <main className='-mt-32'>
           <div className='mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8'>
             <div className='rounded-lg bg-gray-100 px-5 py-6 shadow sm:px-6'>
-              <Card />
+              <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
+                {response?.results?.map(
+                  ({
+                    birth_year = "",
+                    height = "",
+                    films = [],
+                    gender = "",
+                    name = "",
+                    starships = [],
+                    mass = "",
+                    url = "",
+                  }) => {
+                    return (
+                      <CharacterCard
+                        key={name + birth_year}
+                        birth_year={birth_year}
+                        height={height}
+                        films={films}
+                        gender={gender}
+                        starships={starships}
+                        mass={mass}
+                        name={name}
+                        url={url}
+                      />
+                    );
+                  }
+                )}
+              </div>
             </div>
           </div>
         </main>
