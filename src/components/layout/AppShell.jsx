@@ -2,6 +2,7 @@ import Navbar from "./navagation/Navbar";
 import CharacterCard from "./card/CharacterCard";
 import Footer from "./footer/Footer";
 import useFetch from "../../hooks/useFetch";
+import FilmChart from "./chart/FilmChart";
 
 export default function AppShell() {
   const { data, setSearchURL } = useFetch("https://swapi.dev/api/people/");
@@ -23,6 +24,7 @@ export default function AppShell() {
         <main className='-mt-32'>
           <div className='mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8'>
             <div className='rounded-lg bg-gray-100 px-5 py-6 shadow sm:px-6'>
+              <FilmChart />
               <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
                 {data?.results?.map(
                   ({
