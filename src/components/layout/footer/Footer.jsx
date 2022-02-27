@@ -25,12 +25,24 @@ export default function Footer() {
       </div>
 
       <footer>
-        <div className='relative mx-auto flex max-w-7xl py-12 px-4 sm:flex-col sm:px-6 md:flex md:items-center md:justify-between lg:px-8'>
-          <p className='text-2xl text-white'>
+        <div className='relative mx-auto flex max-w-7xl flex-col items-center px-4 sm:px-6 md:flex md:justify-between lg:px-8'>
+          <p className='text-xl text-gray-400'>
             “Do. Or do not. There is no try.” — Yoda
           </p>
+          <nav className='-mx-5 -my-2 flex justify-center' aria-label='Footer'>
+            {navigation.map((item) => (
+              <div key={item.name} className='px-5 py-8'>
+                <a
+                  href={item.href}
+                  className='text-base text-gray-400 hover:text-stardata'
+                >
+                  {item.name}
+                </a>
+              </div>
+            ))}
+          </nav>
         </div>
-        <div className='relative mx-auto flex w-80 max-w-7xl py-12 px-4 sm:flex-col sm:px-6 md:flex md:items-center md:justify-between lg:px-8'>
+        <div className='relative mx-auto flex w-80 max-w-7xl items-center py-12 px-4 sm:flex-col sm:px-6 md:flex md:justify-between lg:px-8'>
           <Logo />
         </div>
       </footer>
