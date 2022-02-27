@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import Search from "./Search";
+import Logo from '../../../images/Logo'
 
 const user = {
   name: "Tom Cook",
@@ -33,20 +34,11 @@ export default function Navbar({ setSearchURL }) {
     >
       {({ open }) => (
         <>
-          <div className='mx-auto max-w-7xl px-2 sm:px-4 lg:px-8'>
+          <div className='mx-auto  max-w-7xl px-2 sm:px-4 lg:px-8'>
             <div className='relative flex h-16 items-center justify-between lg:border-b lg:border-stardata-400 lg:border-opacity-25'>
               <div className='flex items-center px-2 lg:px-0'>
                 <div className='block h-12 w-12'>
-                  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 370 370'>
-                    <circle cx='109.8' cy='329.7' r='30.3' fill='#9E4F60' />
-                    <circle cx='268.2' cy='260.7' r='30.3' fill='#9E4F60' />
-                    <circle cx='329.7' cy='109.3' r='30.3' fill='#9E4F60' />
-                    <circle cx='108.9' cy='108.9' r='63.9' fill='none' />
-                    <path
-                      fill='#9E4F60'
-                      d='M280.9 127.3V90.4h-75.8C196.6 44.7 156.6 10 108.4 10 54 10 10 54 10 108.4c0 48.5 35.1 88.8 81.4 96.9v76.5h36.9v-77.1c13.1-2.7 25.3-8 36-15.4l50.8 50.8 26.1-26.1-51-51c7.1-10.6 12.2-22.8 14.8-35.8h75.9zM45 108.9C45 73.6 73.6 45 108.9 45s63.9 28.6 63.9 63.9-28.6 63.9-63.9 63.9c-35.3-.1-63.9-28.7-63.9-63.9z'
-                    />
-                  </svg>
+                  <Logo />
                 </div>
                 <div className='hidden lg:ml-10 lg:block'>
                   <div className='flex space-x-4'>
