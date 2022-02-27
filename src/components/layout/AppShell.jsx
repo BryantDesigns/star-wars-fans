@@ -1,5 +1,5 @@
 import Navbar from "./navagation/Navbar";
-import CharacterCard from "./card/Card";
+import CharacterCard from "./card/CharacterCard";
 import Footer from "./footer/Footer";
 import useFetch from "../../hooks/useFetch";
 
@@ -46,9 +46,22 @@ export default function AppShell() {
                         mass={mass}
                         name={name}
                         url={url}
+                        setSearchURL={setSearchURL}
                       />
                     );
                   }
+                )}
+                {data?.name && (
+                  <CharacterCard
+                    birth_year={data.birth_year}
+                    height={data.height}
+                    films={data.films}
+                    gender={data.gender}
+                    starships={data.starships}
+                    mass={data.mass}
+                    name={data.name}
+                    url={data.url}
+                  />
                 )}
               </div>
             </div>
