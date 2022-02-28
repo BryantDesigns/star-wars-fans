@@ -10,7 +10,7 @@ const Search = ({ setSearchURL = () => {} }) => {
   const handleChange = (event) => {
     const { value } = event.target;
     if (!value) {
-      setSearchValue("");
+      setSearchValue(PEOPLE_SEARCH_URL);
     } else {
       setSearchValue(PEOPLE_SEARCH_URL + value);
     }
