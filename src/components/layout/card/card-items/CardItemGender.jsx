@@ -1,8 +1,8 @@
-const CardItemGender = ({ gender }) => {
+const CardItemGender = ({ gender = "" }) => {
   return (
-    <div className='sm:col-span-1'>
+    <div className='sm:col-span-1 text-right'>
       <dt className='text-sm font-medium text-gray-500'>Gender</dt>
-      <dd className='mt-1 text-sm text-gray-900'>{gender}</dd>
+      <dd className='text-md mt-1 text-gray-900'>{gender}</dd>
     </div>
   );
 };

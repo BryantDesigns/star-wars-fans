@@ -1,6 +1,11 @@
 import { Disclosure } from "@headlessui/react";
 
-const MobileProfile = ({ loggedIn, user, userNavigation }) => {
+const MobileProfile = ({
+  loggedIn = false,
+  setLoggedIn = () => {},
+  user = {},
+  userNavigation = [],
+}) => {
   return (
     <>
       {loggedIn && (
@@ -10,7 +15,7 @@ const MobileProfile = ({ loggedIn, user, userNavigation }) => {
               <img
                 className='h-10 w-10 rounded-full'
                 src={user.imageUrl}
-                alt=''
+                alt={user.name}
               />
             </div>
             <div className='ml-3'>
@@ -23,16 +28,35 @@ const MobileProfile = ({ loggedIn, user, userNavigation }) => {
             </div>
           </div>
           <div className='mt-3 space-y-1 px-2'>
-            {userNavigation.map((item) => (
-              <Disclosure.Button
-                key={item.name}
-                as='a'
-                href={item.href}
-                className='block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-stardata-500 hover:bg-opacity-75'
-              >
-                {item.name}
-              </Disclosure.Button>
-            ))}
+            {userNavigation.map((item) => {
+              if (item.name === "Sign out") {
+                return (
+                  <>
+                    <Disclosure.Button
+                      key={item.name}
+                      as='a'
+                      href={item.href}
+                      onClick={() => setLoggedIn(false)}
+                      className='block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-stardata-500 hover:bg-opacity-75'
+                    >
+                      {item.name}
+                    </Disclosure.Button>
+                  </>
+                );
+              }
+              return (
+                <>
+                  <Disclosure.Button
+                    key={item.name}
+                    as='a'
+                    href={item.href}
+                    className='block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-stardata-500 hover:bg-opacity-75'
+                  >
+                    {item.name}
+                  </Disclosure.Button>
+                </>
+              );
+            })}
           </div>
         </div>
       )}

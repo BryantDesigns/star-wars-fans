@@ -1,3 +1,4 @@
+import { LoginButton } from "./navbar-items/LoginButton";
 import { useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
@@ -6,17 +7,17 @@ import ProfileDropdown from "./navbar-items/ProfileDropdown";
 import MobileNavLinks from "./navbar-items/MobileNavLinks";
 import MobileProfile from "./navbar-items/MobileProfile";
 import Search from "./Search";
-import Logo from "../../../images/Logo";
-import navagationData from "../../../utilities/navagationData";
+import Logo from "../../../assets/images/Logo";
+import navagationData from "../../../utilities/navigationData";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar({ setSearchURL }) {
+export default function Navbar({ setSearchURL = () => {} }) {
   const [loggedIn, setLoggedIn] = useState(false);
   const { user, navigation, userNavigation } = navagationData;
-  
+
   return (
     <Disclosure
       as='nav'
@@ -40,27 +41,24 @@ export default function Navbar({ setSearchURL }) {
               <Search setSearchURL={setSearchURL} />
               <div className='flex lg:hidden'>
                 {/* Mobile menu button */}
-                <Disclosure.Button className='inline-flex items-center justify-center rounded-md bg-stardata-600 p-2 text-stardata-200 hover:bg-stardata-500 hover:bg-opacity-75 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-stardata-600'>
-                  <span className='sr-only'>Open main menu</span>
-                  {open ? (
-                    <XIcon className='block h-6 w-6' aria-hidden='true' />
-                  ) : (
-                    <MenuIcon className='block h-6 w-6' aria-hidden='true' />
-                  )}
-                </Disclosure.Button>
+                {loggedIn && (
+                  <Disclosure.Button
+                    setLoggedIn={setLoggedIn}
+                    className='inline-flex items-center justify-center rounded-md bg-stardata-600 p-2 text-stardata-200 hover:bg-stardata-500 hover:bg-opacity-75 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-stardata-600'
+                  >
+                    <span className='sr-only'>Open main menu</span>
+                    {open ? (
+                      <XIcon className='block h-6 w-6' aria-hidden='true' />
+                    ) : (
+                      <MenuIcon className='block h-6 w-6' aria-hidden='true' />
+                    )}
+                  </Disclosure.Button>
+                )}
               </div>
               <div className=' lg:ml-4 lg:block'>
                 <div className='flex items-center'>
-                  {/* Login */}
-                  {!loggedIn && (
-                    <button
-                      type='button'
-                      onClick={() => setLoggedIn(true)}
-                      className='inline-flex items-center rounded-md border border-transparent bg-stardata px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-stardata-600 focus:outline-none focus:ring-2 focus:ring-stardata-500 focus:ring-offset-2'
-                    >
-                      Login
-                    </button>
-                  )}
+                  {/* Login Button */}
+                  {!loggedIn && <LoginButton setLoggedIn={setLoggedIn} />}
 
                   {/* Profile dropdown */}
                   <ProfileDropdown
