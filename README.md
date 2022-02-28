@@ -1,3 +1,4 @@
+# Star Wars Fans | Website
 https://star-wars-fans.netlify.app
 
 The Custom Dev team has received a request to build out a single page application for Star Wars fans. After analyzing the initial requirements, it was decided that utilizing React JS for the front-end is the best approach. The first iteration of the application will be a single page/screen that will be responsible for displaying all the characters in the Star Wars films. The first deliverable will be the UI design completed and built out in React JS.
