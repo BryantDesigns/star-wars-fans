@@ -4,9 +4,11 @@ import Footer from "./footer/Footer";
 import useFetch from "../../hooks/useFetch";
 import ChartSection from "./chart/ChartSection";
 import Pagination from "./navagation/Pagination";
+import { PEOPLE_PAGE_ONE } from "../../constants/constants";
+
 
 export default function AppShell() {
-  const { data, setSearchURL, getPage } = useFetch("https://swapi.dev/api/people/");
+  const { data, setSearchURL } = useFetch(PEOPLE_PAGE_ONE);
 
   return (
     <>
@@ -26,7 +28,7 @@ export default function AppShell() {
           <div className='mx-auto px-4 pb-12 sm:px-6 lg:px-8'>
             <ChartSection />
             <div className='rounded-lg bg-gray-100 px-5 py-6 shadow sm:px-6'>
-              <Pagination data={data} getPage={getPage} />
+              <Pagination data={data} setSearchURL={setSearchURL} />
               <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
                 {data?.results?.map(
                   ({

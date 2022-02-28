@@ -49,7 +49,7 @@ export default function Navbar({ setSearchURL }) {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className='hidden lg:ml-4 lg:block'>
+              <div className=' lg:ml-4 lg:block'>
                 <div className='flex items-center'>
                   {/* Login */}
                   {!loggedIn && (
@@ -65,6 +65,7 @@ export default function Navbar({ setSearchURL }) {
                   {/* Profile dropdown */}
                   <ProfileDropdown
                     loggedIn={loggedIn}
+                    setLoggedIn={setLoggedIn}
                     classNames={classNames}
                     user={user}
                     userNavigation={userNavigation}
