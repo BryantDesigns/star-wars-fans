@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { PEOPLE_SEARCH_URL } from "../../../constants/constants";
+import { PEOPLE_PAGE_ONE, PEOPLE_SEARCH_URL } from "../../../constants/constants";
 import useDebounce from "../../../hooks/useDebounce";
 import { SearchIcon } from "@heroicons/react/solid";
 
@@ -10,7 +10,7 @@ const Search = ({ setSearchURL = () => {} }) => {
   const handleChange = (event) => {
     const { value } = event.target;
     if (!value) {
-      setSearchValue(PEOPLE_SEARCH_URL);
+      setSearchValue(PEOPLE_PAGE_ONE);
     } else {
       setSearchValue(PEOPLE_SEARCH_URL + value);
     }

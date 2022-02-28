@@ -1,7 +1,13 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 
-const ProfileDropdown = ({ loggedIn, user, userNavigation, classNames }) => {
+const ProfileDropdown = ({
+  loggedIn = false,
+  setLoggedIn = () => {},
+  user,
+  userNavigation,
+  classNames,
+}) => {
   return (
     <>
       {loggedIn && (
@@ -26,21 +32,43 @@ const ProfileDropdown = ({ loggedIn, user, userNavigation, classNames }) => {
             leaveTo='transform opacity-0 scale-95'
           >
             <Menu.Items className='absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
-              {userNavigation.map((item) => (
-                <Menu.Item key={item.name}>
-                  {({ active }) => (
-                    <a
-                      href={item.href}
-                      className={classNames(
-                        active ? "bg-gray-100" : "",
-                        "block py-2 px-4 text-sm text-gray-700"
-                      )}
+              {userNavigation.map((item) => {
+                if (item.name === "Sign out") {
+                  return (
+                    <Menu.Item
+                      key={item.name}
+                      onClick={() => setLoggedIn(false)}
                     >
-                      {item.name}
-                    </a>
-                  )}
-                </Menu.Item>
-              ))}
+                      {({ active }) => (
+                        <a
+                          href={item.href}
+                          className={classNames(
+                            active ? "bg-gray-100" : "",
+                            "block py-2 px-4 text-sm text-gray-700"
+                          )}
+                        >
+                          {item.name}
+                        </a>
+                      )}
+                    </Menu.Item>
+                  );
+                }
+                return (
+                  <Menu.Item key={item.name}>
+                    {({ active }) => (
+                      <a
+                        href={item.href}
+                        className={classNames(
+                          active ? "bg-gray-100" : "",
+                          "block py-2 px-4 text-sm text-gray-700"
+                        )}
+                      >
+                        {item.name}
+                      </a>
+                    )}
+                  </Menu.Item>
+                );
+              })}
             </Menu.Items>
           </Transition>
         </Menu>
