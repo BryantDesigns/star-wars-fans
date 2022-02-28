@@ -1,11 +1,35 @@
-import AppShell from './components/layout/AppShell'
+import Navbar from "./components/layout/navagation/Navbar";
+import Footer from "./components/layout/footer/Footer";
+import useFetch from "./hooks/useFetch";
+import ChartSection from "./components/layout/chart/ChartSection";
+import Pagination from "./components/layout/navagation/Pagination";
+import Header from "./components/layout/header/Header";
+import { PEOPLE_PAGE_ONE } from "./constants/constants";
+import MappedCharacterCards from "./components/layout/card/MappedCharacterCards";
 
-function App() {
+export default function App() {
+  const { data, setSearchURL } = useFetch(PEOPLE_PAGE_ONE);
+
   return (
     <>
-      <AppShell />
+      <div className='min-h-full bg-gradient-to-t from-black via-gray-900 to-gray-700'>
+        <Header>
+          <Navbar setSearchURL={setSearchURL} />
+        </Header>
+
+        <main className='-mt-32'>
+          <div className='mx-auto px-4 pb-12 sm:px-6 lg:px-8'>
+            <div className='rounded-lg bg-gray-100 px-5 py-6 shadow sm:px-6'>
+              <Pagination data={data} setSearchURL={setSearchURL} />
+              <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
+                <MappedCharacterCards data={data} setSearchURL={setSearchURL} />
+              </div>
+            </div>
+            <ChartSection />
+          </div>
+        </main>
+      </div>
+      <Footer />
     </>
   );
 }
-
-export default App;
