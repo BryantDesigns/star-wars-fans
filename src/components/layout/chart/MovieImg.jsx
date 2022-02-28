@@ -1,10 +1,10 @@
-const MovieImg = ({ title }) => {
+const MovieImg = ({ title = "" }) => {
   return (
-    <div className='min-h-80 lg:aspect-auto aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-t-md group-hover:opacity-75 lg:h-96'>
+    <div className='overflow-hidden rounded-t-md shadow-sm shadow-gray-400 group-hover:opacity-75'>
       <img
         src={`https://res.cloudinary.com/bryant-designs/image/upload/v1645999617/films/${title}.jpg`}
         alt={title}
-        className='h-full w-full object-cover object-center'
+        className=' h-full w-full object-contain object-center'
       />
     </div>
   );

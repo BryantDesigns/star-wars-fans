@@ -25,7 +25,7 @@ export default function CharacterCard({
     >
       <div className='border-y border-gray-200 px-4 py-5 sm:px-6'>
         <CardItemImg name={name} />
-        <dl className='grid grid-cols-2 gap-x-4 gap-y-4'>
+        <dl className='grid grid-cols-2 gap-x-4 gap-y-4 pt-5'>
           <CardItemName name={name} />
           <CardItemHeight height={height} />
           <CardItemBirthYear birth_year={birth_year} />

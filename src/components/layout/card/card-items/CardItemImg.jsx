@@ -1,5 +1,5 @@
 
-const CardItemImg = ({ name }) => {
+const CardItemImg = ({ name = "" }) => {
   return (
     <div className='min-h-80 lg:aspect-square aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-t-md bg-gray-200 group-hover:opacity-75 lg:h-80'>
       <img

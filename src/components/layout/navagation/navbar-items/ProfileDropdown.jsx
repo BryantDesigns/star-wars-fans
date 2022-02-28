@@ -4,16 +4,16 @@ import { Menu, Transition } from "@headlessui/react";
 const ProfileDropdown = ({
   loggedIn = false,
   setLoggedIn = () => {},
-  user,
-  userNavigation,
-  classNames,
+  user = {},
+  userNavigation = [],
+  classNames = () => {},
 }) => {
   return (
     <>
       {loggedIn && (
         <Menu as='div' className='relative ml-3 flex-shrink-0'>
           <div>
-            <Menu.Button className='flex rounded-full bg-stardata-600 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-stardata-600'>
+            <Menu.Button className='hidden rounded-full bg-stardata-600 text-sm focus:outline-none focus:ring-2 focus:ring-stardata focus:ring-offset-2 focus:ring-offset-stardata-600 lg:flex'>
               <span className='sr-only'>Open user menu</span>
               <img
                 className='h-8 w-8 rounded-full'

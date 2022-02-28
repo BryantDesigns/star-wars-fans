@@ -1,14 +1,9 @@
-import stars from "../../../images/background-stars.jpeg";
-import Logo from "../../../images/Logo";
-
-const navigation = [
-  { name: "Characters", href: "#", current: true },
-  { name: "Planets", href: "#", current: false },
-  { name: "Spaceships", href: "#", current: false },
-  { name: "Vehicles", href: "#", current: false },
-];
+import stars from "../../../assets/images/background-stars.jpeg";
+import Logo from "../../../assets/images/Logo";
+import navigationData from "../../../utilities/navigationData";
 
 export default function Footer() {
+  const { navigation } = navigationData;
   return (
     <div className='relative overflow-hidden bg-black'>
       {/* Decorative background image and gradient */}
@@ -30,13 +25,13 @@ export default function Footer() {
             “Do. Or do not. There is no try.” — Yoda
           </p>
           <nav className='-mx-5 -my-2 flex justify-center' aria-label='Footer'>
-            {navigation.map((item) => (
-              <div key={item.name} className='px-5 py-8'>
+            {navigation.map(({ name, href }) => (
+              <div key={name} className='px-5 py-8'>
                 <a
-                  href={item.href}
+                  href={href}
                   className='text-base text-gray-400 hover:text-stardata'
                 >
-                  {item.name}
+                  {name}
                 </a>
               </div>
             ))}
