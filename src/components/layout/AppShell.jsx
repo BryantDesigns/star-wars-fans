@@ -2,7 +2,7 @@ import Navbar from "./navagation/Navbar";
 import CharacterCard from "./card/CharacterCard";
 import Footer from "./footer/Footer";
 import useFetch from "../../hooks/useFetch";
-import FilmChart from "./chart/FilmChart";
+import ChartSection from "./chart/ChartSection";
 import Pagination from "./navagation/Pagination";
 
 export default function AppShell() {
@@ -24,8 +24,9 @@ export default function AppShell() {
 
         <main className='-mt-32'>
           <div className='mx-auto px-4 pb-12 sm:px-6 lg:px-8'>
-            <div className='rounded-lg bg-gray-100 px-5 py-6 shadow sm:px-6'> 
-            <Pagination data={data} getPage={getPage} />
+            <ChartSection />
+            <div className='rounded-lg bg-gray-100 px-5 py-6 shadow sm:px-6'>
+              <Pagination data={data} getPage={getPage} />
               <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
                 {data?.results?.map(
                   ({
@@ -67,7 +68,6 @@ export default function AppShell() {
                   />
                 )}
               </div>
-              <FilmChart />
             </div>
           </div>
         </main>

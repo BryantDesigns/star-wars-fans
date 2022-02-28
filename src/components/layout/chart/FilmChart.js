@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import {
   Chart as ChartJS,
   BarElement,
@@ -19,25 +18,21 @@ ChartJS.register(
   Legend
 );
 
-const FilmChart = () => {
-  const [films, setFilms] = useState([])
-
-    useEffect(() => {
-      getFilms();
-    }, []);
+const FilmChart = ({data = []}) => {
   
-      async function getFilms() {
-        const res = await fetch("https://swapi.dev/api/films/");
-        const starWarsJson = await res.json();
-        setFilms(starWarsJson.results);
-      }
 
-  const data = {
-    labels: films?.map((film) => film.title),
+  const movieTitles = () => { 
+    return data?.results?.map((film) => film.title);
+  }
+  const characterCount = () => { 
+    return data?.results?.map((film) => film.characters.length);
+  } 
+  const chartData = {
+    labels: movieTitles(),
     datasets: [
       {
         label: "Number of Characters",
-        data: films?.map((film) => film.characters.length),
+        data: characterCount(),
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
@@ -82,7 +77,7 @@ const FilmChart = () => {
   
   return (
     <div>
-      <Bar data={data} options={options} height={400} />
+      <Bar data={chartData} options={options} height={400} />
     </div>
   );
 };
