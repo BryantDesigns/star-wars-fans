@@ -2,8 +2,8 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import { PEOPLE_BY_PAGE, PEOPLE_PAGE_ONE } from "../../../constants/constants";
 const Pagination = ({ data = {}, setSearchURL = () => {} }) => {
   function countNumPages(data) {
-    if(!data) return
-    return Math.ceil(data.count / 10)
+    if (!data) return;
+    return Math.ceil(data.count / 10);
   }
   return (
     <div className='flex justify-center pb-6'>
@@ -20,19 +20,21 @@ const Pagination = ({ data = {}, setSearchURL = () => {} }) => {
             Previous Page
           </button>
           {data?.count &&
-            Array(countNumPages(data)).fill(0).map((_, index) => {
-              return (
-                <button
-                  key={PEOPLE_BY_PAGE + (index + 1)}
-                  onClick={() => setSearchURL(PEOPLE_BY_PAGE + (index + 1))}
-                  type='button'
-                  className='relative inline-flex items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:border-stardata-500 focus:outline-none focus:ring-1 focus:ring-stardata-500'
-                >
-                  <span className='sr-only'>Page: {index + 1}</span>
-                  {index + 1}
-                </button>
-              );
-            })}
+            Array(countNumPages(data))
+              .fill(0)
+              .map((_, index) => {
+                return (
+                  <button
+                    key={PEOPLE_BY_PAGE + (index + 1)}
+                    onClick={() => setSearchURL(PEOPLE_BY_PAGE + (index + 1))}
+                    type='button'
+                    className='relative hidden items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:border-stardata-500 focus:outline-none focus:ring-1 focus:ring-stardata-500 sm:inline-flex'
+                  >
+                    <span className='sr-only'>Page: {index + 1}</span>
+                    {index + 1}
+                  </button>
+                );
+              })}
           <button
             disabled={!data.next}
             onClick={() => setSearchURL(data.next)}

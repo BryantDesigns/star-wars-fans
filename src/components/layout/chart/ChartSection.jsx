@@ -23,7 +23,7 @@ export default function ChartSection() {
                     <h3 className='mt-8 text-lg font-medium tracking-tight text-gray-900'>
                       {title}
                     </h3>
-                    <p className='mt-5 text-base text-gray-500'>{characters.length}</p>
+                    <p className='mt-5 text-base text-gray-500'>Characters: {characters.length}</p>
                   </div>
                 </div>
               </div>
