@@ -36,7 +36,7 @@ const ProfileDropdown = ({
                 if (item.name === "Sign out") {
                   return (
                     <Menu.Item
-                      key={item.name}
+                      key={crypto.randomUUID()}
                       onClick={() => setLoggedIn(false)}
                     >
                       {({ active }) => (
@@ -54,7 +54,7 @@ const ProfileDropdown = ({
                   );
                 }
                 return (
-                  <Menu.Item key={item.name}>
+                  <Menu.Item key={crypto.randomUUID()}>
                     {({ active }) => (
                       <a
                         href={item.href}
