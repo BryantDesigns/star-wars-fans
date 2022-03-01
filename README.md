@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://res.cloudinary.com/bryant-designs/image/upload/v1646144439/Star_Wars_Databank_Logo_xghce3.svg" width="150" alt="Star Wars Database" /></a>
+  <a href="https://star-wars-fans.netlify.app"><img src="https://res.cloudinary.com/bryant-designs/image/upload/v1646144439/Star_Wars_Databank_Logo_xghce3.svg" width="150" alt="Star Wars Database" /></a>
   <br>
   Star Wars Fans | Database
   <br>
