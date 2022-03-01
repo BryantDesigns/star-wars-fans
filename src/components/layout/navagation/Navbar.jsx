@@ -43,7 +43,7 @@ export default function Navbar({ setSearchURL = () => {} }) {
                 {/* Mobile menu button */}
                 {loggedIn && (
                   <Disclosure.Button
-                    className='inline-flex items-center justify-center rounded-md bg-stardata-600 p-2 text-stardata-200 hover:bg-stardata-500 hover:bg-opacity-75 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-stardata-600'
+                    className='inline-flex items-center justify-center rounded-md bg-stardata-600 p-2 text-stardata-200 hover:bg-stardata-500 hover:bg-opacity-75 hover:text-white'
                   >
                     <span className='sr-only'>Open main menu</span>
                     {open ? (

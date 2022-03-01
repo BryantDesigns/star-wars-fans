@@ -13,7 +13,7 @@ const Pagination = ({ data = {}, setSearchURL = () => {} }) => {
             disabled={!data.previous}
             onClick={() => setSearchURL(data.previous)}
             type='button'
-            className='relative inline-flex items-center rounded-l-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:border-stardata-500 focus:outline-none focus:ring-1 focus:ring-stardata-500 disabled:bg-gray-100'
+            className='relative inline-flex items-center rounded-l-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:bg-gray-100'
           >
             <span className='sr-only'>Previous</span>
             <ChevronLeftIcon className='h-5 w-5' aria-hidden='true' />
@@ -28,7 +28,7 @@ const Pagination = ({ data = {}, setSearchURL = () => {} }) => {
                     key={crypto.randomUUID()}
                     onClick={() => setSearchURL(PEOPLE_BY_PAGE + (index + 1))}
                     type='button'
-                    className='relative hidden items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:border-stardata-500 focus:outline-none focus:ring-1 focus:ring-stardata-500 sm:inline-flex'
+                    className='relative hidden items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50  sm:inline-flex'
                   >
                     <span className='sr-only'>Page: {index + 1}</span>
                     {index + 1}
@@ -39,7 +39,7 @@ const Pagination = ({ data = {}, setSearchURL = () => {} }) => {
             disabled={!data.next}
             onClick={() => setSearchURL(data.next)}
             type='button'
-            className='relative -ml-px inline-flex items-center rounded-r-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:border-stardata-500 focus:outline-none focus:ring-1 focus:ring-stardata-500 disabled:bg-gray-100'
+            className='relative -ml-px inline-flex items-center rounded-r-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 disabled:bg-gray-100'
           >
             Next Page
             <span className='sr-only'>Next</span>
@@ -50,7 +50,7 @@ const Pagination = ({ data = {}, setSearchURL = () => {} }) => {
         <button
           onClick={() => setSearchURL(PEOPLE_PAGE_ONE)}
           type='button'
-          className='relative -ml-px inline-flex items-center rounded-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:border-stardata-500 focus:outline-none focus:ring-1 focus:ring-stardata-500'
+          className='relative -ml-px inline-flex items-center rounded-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50'
         >
           <ChevronLeftIcon className='h-5 w-5' aria-hidden='true' />
           Go Back
