@@ -7,7 +7,7 @@
 </h1>
 
 
-[Star Wars Fans](https://star-wars-fans.netlify.app) is a website built using React.js and TailwindCSS. It allowes users to search for characters and also paginate through all the pages. The users are able to view a chart at the bottom of the page that displays the amount of characters in each movie.
+[Star Wars Fans](https://star-wars-fans.netlify.app) is a website built using React.js and TailwindCSS. It allows users to search for characters and also paginate through all the pages. The users are able to view a chart at the bottom of the page that displays the number of characters in each movie.
 
 ## Table of contents
 
