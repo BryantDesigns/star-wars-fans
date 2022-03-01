@@ -21,9 +21,9 @@ export default function App() {
           <div className='mx-auto px-4 pb-12 sm:px-6 lg:px-8'>
             <div className='rounded-lg bg-gray-200 px-5 py-6 shadow sm:px-6'>
               <Pagination data={data} setSearchURL={setSearchURL} />
-              <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
+              <section className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
                 <MappedCharacterCards data={data} setSearchURL={setSearchURL} />
-              </div>
+              </section>
             </div>
             <ChartSection />
           </div>
