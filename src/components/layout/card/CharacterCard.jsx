@@ -19,7 +19,7 @@ export default function CharacterCard({
   setSearchURL = () => {},
 }) {
   return (
-    <div
+    <article
       onClick={() => setSearchURL(url)}
       className='cursor-pointer overflow-hidden bg-white shadow sm:rounded-lg'
     >
@@ -35,6 +35,6 @@ export default function CharacterCard({
         </dl>
       </div>
       <ButtonContainer />
-    </div>
+    </article>
   );
 }

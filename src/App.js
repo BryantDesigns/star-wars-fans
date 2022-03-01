@@ -9,7 +9,7 @@ import MappedCharacterCards from "./components/layout/card/MappedCharacterCards"
 
 export default function App() {
   const { data, setSearchURL } = useFetch(PEOPLE_PAGE_ONE);
-
+  
   return (
     <>
       <div className='relative min-h-full bg-gradient-to-t from-black via-gray-700 to-gray-200 mt-16'>
