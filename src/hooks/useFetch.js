@@ -33,7 +33,7 @@ const useFetch = (initialURL, options) => {
       return
     }
     if (!searchURL) return
-    fetchData(searchURL).then(setCache);
+    fetchData(searchURL).then(setCache).catch((err) => console.error("error fetching"));
   }, [searchURL, options]);
   return { data, error, loading, setSearchURL };
 };
