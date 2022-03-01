@@ -24,7 +24,7 @@
 - The **user** is able search the characters by name.
 - The **user** is able to see a chart which displays the titles of all the movies and the number of characters in each movie.
 
-<img src="https://res.cloudinary.com/bryant-designs/image/upload/v1646155796/project_fdpixn.jpg" width="1920"  alt="Star Wars Project Overview" />
+<img src="https://res.cloudinary.com/bryant-designs/image/upload/v1646156135/project-image-01_kmnzhr.png" width="1920"  alt="Star Wars Project Overview" />
 
 ## Upcoming Features
 
