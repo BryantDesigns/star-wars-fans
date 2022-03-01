@@ -26,7 +26,7 @@ export default function Footer() {
           </p>
           <nav className='-mx-5 -my-2 flex justify-center' aria-label='Footer'>
             {navigation.map(({ name, href }) => (
-              <div key={crypto.randomUUID()} className='px-5 py-8'>
+              <div key={crypto.randomUUID()} className='px-2 sm:px-5 py-8'>
                 <a
                   href={href}
                   className='text-base text-gray-400 hover:text-stardata'
@@ -37,7 +37,7 @@ export default function Footer() {
             ))}
           </nav>
         </div>
-        <div className='relative mx-auto flex w-80 max-w-7xl items-center py-12 px-4 sm:flex-col sm:px-6 md:flex md:justify-between lg:px-8'>
+        <div className='relative mx-auto flex w-28 max-w-7xl items-center py-12 px-4 sm:flex-col sm:px-6 md:flex md:justify-between lg:px-8'>
           <Logo />
         </div>
       </footer>
