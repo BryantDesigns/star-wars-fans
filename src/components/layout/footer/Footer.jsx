@@ -1,6 +1,7 @@
 import stars from "../../../assets/images/background-stars.jpeg";
 import Logo from "../../../assets/images/Logo";
 import navigationData from "../../../utilities/navigationData";
+import { nanoid } from "nanoid";
 
 export default function Footer() {
   const { navigation } = navigationData;
@@ -26,7 +27,7 @@ export default function Footer() {
           </p>
           <nav className='-mx-5 -my-2 flex justify-center' aria-label='Footer'>
             {navigation.map(({ name, href }) => (
-              <div key={crypto.randomUUID()} className='px-2 sm:px-5 py-8'>
+              <div key={nanoid()} className='px-2 py-8 sm:px-5'>
                 <a
                   href={href}
                   className='text-base text-gray-400 hover:text-stardata'

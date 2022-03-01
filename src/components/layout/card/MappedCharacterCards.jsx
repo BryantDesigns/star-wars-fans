@@ -1,4 +1,5 @@
 import CharacterCard from "./CharacterCard";
+import { nanoid } from "nanoid";
 
 const MappedCharacterCards = ({ data = null, setSearchURL = () => {} }) => {
   if (data === null) {
@@ -20,7 +21,7 @@ const MappedCharacterCards = ({ data = null, setSearchURL = () => {} }) => {
           }) => {
             return (
               <CharacterCard
-                key={crypto.randomUUID()}
+                key={nanoid()}
                 birth_year={birth_year}
                 height={height}
                 films={films}

@@ -1,4 +1,6 @@
 import { Disclosure } from "@headlessui/react";
+import { nanoid } from "nanoid";
+
 
 const MobileProfile = ({
   loggedIn = false,
@@ -32,7 +34,7 @@ const MobileProfile = ({
               if (item.name === "Sign out") {
                 return (
                   <button
-                    key={crypto.randomUUID()}
+                    key={nanoid()}
                     onClick={() => setLoggedIn(false)}
                     className='block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-stardata-500 hover:bg-opacity-75'
                   >
@@ -42,7 +44,7 @@ const MobileProfile = ({
               }
               return (
                 <Disclosure.Button
-                  key={crypto.randomUUID()}
+                  key={nanoid()}
                   as='a'
                   href={item.href}
                   className='block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-stardata-500 hover:bg-opacity-75'

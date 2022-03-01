@@ -1,4 +1,5 @@
 import { Disclosure } from "@headlessui/react";
+import { nanoid } from "nanoid";
 
 const MobileNavLinks = ({ loggedIn, navigation, classNames }) => {
   return (
@@ -7,7 +8,7 @@ const MobileNavLinks = ({ loggedIn, navigation, classNames }) => {
         <div className='space-y-1 px-2 pt-2 pb-3'>
           {navigation.map((item) => (
             <Disclosure.Button
-              key={crypto.randomUUID()}
+              key={nanoid()}
               as='a'
               href={item.href}
               className={classNames(

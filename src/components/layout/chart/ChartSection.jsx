@@ -3,6 +3,7 @@ import FilmChart from "./FilmChart";
 import MovieImg from "./MovieImg";
 import useFetch from "../../../hooks/useFetch";
 import Container from "../Container";
+import { nanoid } from 'nanoid'
 
 export default function ChartSection() {
   const { data } = useFetch("https://swapi.dev/api/films/");
@@ -13,7 +14,7 @@ export default function ChartSection() {
         <div className='mt-8 text-center'>
           <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-4'>
             {data?.results?.map(({ title, characters }) => (
-              <div key={crypto.randomUUID()} className='pt-6'>
+              <div key={nanoid()} className='pt-6'>
                 <div className='flow-root rounded-lg pb-8'>
                   <div className='-mt-6'>
                     <div>

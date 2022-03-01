@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
+import { nanoid } from "nanoid";
 
 const ProfileDropdown = ({
   loggedIn = false,
@@ -36,7 +37,7 @@ const ProfileDropdown = ({
                 if (item.name === "Sign out") {
                   return (
                     <Menu.Item
-                      key={crypto.randomUUID()}
+                      key={nanoid()}
                       onClick={() => setLoggedIn(false)}
                     >
                       {({ active }) => (
@@ -54,7 +55,7 @@ const ProfileDropdown = ({
                   );
                 }
                 return (
-                  <Menu.Item key={crypto.randomUUID()}>
+                  <Menu.Item key={nanoid()}>
                     {({ active }) => (
                       <a
                         href={item.href}

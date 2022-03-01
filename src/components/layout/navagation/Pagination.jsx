@@ -1,5 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import { PEOPLE_BY_PAGE, PEOPLE_PAGE_ONE } from "../../../constants/constants";
+import { nanoid } from "nanoid";
 const Pagination = ({ data = {}, setSearchURL = () => {} }) => {
   function countNumPages(data) {
     if (!data) return;
@@ -25,7 +26,7 @@ const Pagination = ({ data = {}, setSearchURL = () => {} }) => {
               .map((_, index) => {
                 return (
                   <button
-                    key={crypto.randomUUID()}
+                    key={nanoid()}
                     onClick={() => setSearchURL(PEOPLE_BY_PAGE + (index + 1))}
                     type='button'
                     className='relative hidden items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50  sm:inline-flex'

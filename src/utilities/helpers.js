@@ -6,9 +6,11 @@ export function toFeet(heightInCentimeters) {
 }
 
 export function toPounds(weightInKilograms) {
-  const num = parseFloat(weightInKilograms.replace(/,/g, ""));
-  const pounds = Math.round(num * 2.20462262);
-  return `${pounds}lbs`;
+  if (weightInKilograms === "unknown") {
+    return "unknown";
+  } else {
+    const num = parseFloat(weightInKilograms.replace(/,/g, ""));
+    const pounds = Math.round(num * 2.20462262);
+    return `${pounds}lbs`;
+  }
 }
-
-

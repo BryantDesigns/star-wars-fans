@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 const NavLinks = ({ loggedIn, navigation, classNames }) => {
   return (
     <>
@@ -6,7 +7,7 @@ const NavLinks = ({ loggedIn, navigation, classNames }) => {
           <div className='flex space-x-4'>
             {navigation.map((item) => (
               <a
-                key={crypto.randomUUID()}
+                key={nanoid()}
                 href={item.href}
                 className={classNames(
                   item.current
