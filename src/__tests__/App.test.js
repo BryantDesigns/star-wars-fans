@@ -42,16 +42,4 @@ test("renders the character data", async () => {
   }
 });
 
-// // tests a failed fetch request like a 404 error
-// test("handles errors on bad get fetch", async () => {
-//   server.use(
-//     // server.use here allows use to overide the handler for this endpoint in this one test
-//     rest.get(constantURLS.PEOPLE_PAGE_ONE, (_req, res, ctx) => {
-//       return res(ctx.status(404));
-//     })
-//   );
 
-//   render(<App />);
-
-//   expect(await screen.findByText(/There was an error/i)).toBeInTheDocument();
-// });

@@ -38,7 +38,7 @@ export default function Footer() {
             ))}
           </nav>
         </div>
-        <div className='relative mx-auto flex w-28 max-w-7xl items-center py-12 px-4 sm:flex-col sm:px-6 md:flex md:justify-between lg:px-8'>
+        <div className='relative mx-auto flex w-28 lg:w-48 max-w-7xl items-center py-12 px-4 sm:flex-col sm:px-6 md:flex md:justify-between lg:px-8'>
           <Logo />
         </div>
       </footer>
