@@ -25,7 +25,7 @@ export default function Navbar({ setSearchURL = () => {} }) {
     >
       {({ open }) => (
         <>
-          <div className='mx-auto  max-w-7xl px-2 sm:px-4 lg:px-8'>
+          <div className='mx-auto max-w-7xl px-2 sm:px-4 lg:px-8'>
             <div className='relative flex h-16 items-center justify-between lg:border-b lg:border-stardata-400 lg:border-opacity-25'>
               <div className='flex items-center px-2 lg:px-0'>
                 <div className='block h-12 w-12'>
@@ -43,7 +43,6 @@ export default function Navbar({ setSearchURL = () => {} }) {
                 {/* Mobile menu button */}
                 {loggedIn && (
                   <Disclosure.Button
-                    setLoggedIn={setLoggedIn}
                     className='inline-flex items-center justify-center rounded-md bg-stardata-600 p-2 text-stardata-200 hover:bg-stardata-500 hover:bg-opacity-75 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-stardata-600'
                   >
                     <span className='sr-only'>Open main menu</span>
@@ -55,7 +54,7 @@ export default function Navbar({ setSearchURL = () => {} }) {
                   </Disclosure.Button>
                 )}
               </div>
-              <div className=' lg:ml-4 lg:block'>
+              <div className='lg:ml-4 lg:block'>
                 <div className='flex items-center'>
                   {/* Login Button */}
                   {!loggedIn && <LoginButton setLoggedIn={setLoggedIn} />}
@@ -84,6 +83,7 @@ export default function Navbar({ setSearchURL = () => {} }) {
             {/* Mobile Profile */}
             <MobileProfile
               loggedIn={loggedIn}
+              setLoggedIn={setLoggedIn}
               classNames={classNames}
               user={user}
               userNavigation={userNavigation}

@@ -20,7 +20,7 @@ const MappedCharacterCards = ({ data = null, setSearchURL = () => {} }) => {
           }) => {
             return (
               <CharacterCard
-                key={name + birth_year}
+                key={crypto.randomUUID()}
                 birth_year={birth_year}
                 height={height}
                 films={films}

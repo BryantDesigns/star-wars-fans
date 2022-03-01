@@ -31,30 +31,24 @@ const MobileProfile = ({
             {userNavigation.map((item) => {
               if (item.name === "Sign out") {
                 return (
-                  <>
-                    <Disclosure.Button
-                      key={item.name}
-                      as='a'
-                      href={item.href}
-                      onClick={() => setLoggedIn(false)}
-                      className='block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-stardata-500 hover:bg-opacity-75'
-                    >
-                      {item.name}
-                    </Disclosure.Button>
-                  </>
-                );
-              }
-              return (
-                <>
-                  <Disclosure.Button
-                    key={item.name}
-                    as='a'
-                    href={item.href}
+                  <button
+                    key={crypto.randomUUID()}
+                    onClick={() => setLoggedIn(false)}
                     className='block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-stardata-500 hover:bg-opacity-75'
                   >
                     {item.name}
-                  </Disclosure.Button>
-                </>
+                  </button>
+                );
+              }
+              return (
+                <Disclosure.Button
+                  key={crypto.randomUUID()}
+                  as='a'
+                  href={item.href}
+                  className='block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-stardata-500 hover:bg-opacity-75'
+                >
+                  {item.name}
+                </Disclosure.Button>
               );
             })}
           </div>

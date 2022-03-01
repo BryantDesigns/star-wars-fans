@@ -6,7 +6,7 @@ const NavLinks = ({ loggedIn, navigation, classNames }) => {
           <div className='flex space-x-4'>
             {navigation.map((item) => (
               <a
-                key={item.name}
+                key={crypto.randomUUID()}
                 href={item.href}
                 className={classNames(
                   item.current

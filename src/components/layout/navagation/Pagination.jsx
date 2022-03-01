@@ -25,7 +25,7 @@ const Pagination = ({ data = {}, setSearchURL = () => {} }) => {
               .map((_, index) => {
                 return (
                   <button
-                    key={PEOPLE_BY_PAGE + (index + 1)}
+                    key={crypto.randomUUID()}
                     onClick={() => setSearchURL(PEOPLE_BY_PAGE + (index + 1))}
                     type='button'
                     className='relative hidden items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:border-stardata-500 focus:outline-none focus:ring-1 focus:ring-stardata-500 sm:inline-flex'

@@ -7,7 +7,7 @@ const MobileNavLinks = ({ loggedIn, navigation, classNames }) => {
         <div className='space-y-1 px-2 pt-2 pb-3'>
           {navigation.map((item) => (
             <Disclosure.Button
-              key={item.name}
+              key={crypto.randomUUID()}
               as='a'
               href={item.href}
               className={classNames(

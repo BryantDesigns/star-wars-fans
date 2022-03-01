@@ -26,7 +26,7 @@ export default function Footer() {
           </p>
           <nav className='-mx-5 -my-2 flex justify-center' aria-label='Footer'>
             {navigation.map(({ name, href }) => (
-              <div key={name} className='px-5 py-8'>
+              <div key={crypto.randomUUID()} className='px-5 py-8'>
                 <a
                   href={href}
                   className='text-base text-gray-400 hover:text-stardata'
