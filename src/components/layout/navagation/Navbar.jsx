@@ -42,9 +42,7 @@ export default function Navbar({ setSearchURL = () => {} }) {
               <div className='flex lg:hidden'>
                 {/* Mobile menu button */}
                 {loggedIn && (
-                  <Disclosure.Button
-                    className='inline-flex items-center justify-center rounded-md bg-stardata-600 p-2 text-stardata-200 hover:bg-stardata-500 hover:bg-opacity-75 hover:text-white'
-                  >
+                  <Disclosure.Button className='inline-flex items-center justify-center rounded-md bg-stardata p-2 text-gray-200 hover:bg-stardata-600 hover:bg-opacity-75 hover:text-white'>
                     <span className='sr-only'>Open main menu</span>
                     {open ? (
                       <XIcon className='block h-6 w-6' aria-hidden='true' />

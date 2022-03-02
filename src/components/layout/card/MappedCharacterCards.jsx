@@ -1,11 +1,12 @@
 import CharacterCard from "./CharacterCard";
 import { nanoid } from "nanoid";
+import NoCharacterFound from "./NoCharacterFound";
 
 const MappedCharacterCards = ({ data = null, setSearchURL = () => {} }) => {
   if (data === null) {
     return null;
   }
-  if (data.results) {
+  if (data?.results?.length > 0) {
     return (
       <>
         {data?.results?.map(
@@ -36,6 +37,11 @@ const MappedCharacterCards = ({ data = null, setSearchURL = () => {} }) => {
           }
         )}
       </>
+    );
+  }
+  if (data?.results?.length === 0) {
+    return (
+      <NoCharacterFound />
     );
   }
   if (data.name) {

@@ -24,10 +24,7 @@ const Search = ({ setSearchURL = () => {} }) => {
         </label>
         <div className='relative'>
           <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'>
-            <SearchIcon
-              className='h-5 w-5 text-gray-400'
-              aria-hidden='true'
-            />
+            <SearchIcon className='h-5 w-5 text-gray-200' aria-hidden='true' />
           </div>
           <input
             id='search'
@@ -35,7 +32,7 @@ const Search = ({ setSearchURL = () => {} }) => {
             type='search'
             onChange={handleChange}
             ref={inputRef}
-            className='block w-full rounded-md border border-transparent bg-gray-800 py-2 pl-10 pr-3 leading-5 text-gray-400 placeholder-gray-400 sm:text-sm'
+            className='block w-full rounded-md border border-transparent bg-stardata py-2 pl-10 pr-3 leading-5 text-gray-200 placeholder-gray-200 focus:border-white focus:outline-none focus:ring-2 focus:bg-stardata-600 focus:ring-stardata focus:ring-offset-2 focus:ring-offset-stardata-600 sm:text-sm'
             placeholder='Search Characters'
           />
         </div>
